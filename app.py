@@ -140,7 +140,7 @@ async def health():
     """
 
     return {
-        "status": "healthy"
+        "status": "healthy",
     }
 
 

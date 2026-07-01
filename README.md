@@ -1,3 +1,11 @@
+---
+title: SHL Assessment Recommender
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+---
 # SHL Assessment Recommender
 
 An AI-powered conversational recommendation system that helps recruiters and hiring managers discover the most suitable **SHL Individual Test Solutions** through natural language conversations.
@@ -5,6 +13,7 @@ An AI-powered conversational recommendation system that helps recruiters and hir
 This project was developed as part of the **SHL AI Intern Take-Home Assignment**.
 
 ---
+
 
 ## Features
 
