@@ -24,7 +24,12 @@ from dotenv import load_dotenv
 # Load Environment Variables
 # ---------------------------------------------------------------------
 
+from dotenv import load_dotenv
+import os
+
+print("Before load_dotenv:", os.getenv("GEMINI_API_KEY"))
 load_dotenv()
+print("After load_dotenv:", os.getenv("GEMINI_API_KEY"))
 
 # ---------------------------------------------------------------------
 # Project Paths
