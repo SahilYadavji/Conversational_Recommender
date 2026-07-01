@@ -23,14 +23,34 @@ from dotenv import load_dotenv
 # ---------------------------------------------------------------------
 # Load Environment Variables
 # ---------------------------------------------------------------------
-import os
 
 load_dotenv()
 
-print("=" * 50)
-print("TEST_VAR =", os.getenv("TEST_VAR"))
-print("GEMINI_API_KEY =", os.getenv("GEMINI_API_KEY"))
-print("=" * 50)
+# ---------------------------------------------------------------------
+# Project Paths
+# ---------------------------------------------------------------------
+
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_DIR = BASE_DIR / "data"
+EMBEDDINGS_DIR = BASE_DIR / "embeddings"
+
+CATALOG_PATH = DATA_DIR / "catalog.json"
+FAISS_PATH = EMBEDDINGS_DIR / "faiss.index"
+METADATA_PATH = EMBEDDINGS_DIR / "metadata.pkl"
+
+# ---------------------------------------------------------------------
+# API Keys
+# ---------------------------------------------------------------------
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+
+if not GEMINI_API_KEY:
+    raise EnvironmentError(
+        "GEMINI_API_KEY is missing.\n"
+        "Please add it to your .env file:\n\n"
+        "GEMINI_API_KEY=your_api_key"
+    )
 
 # ---------------------------------------------------------------------
 # Project Paths
