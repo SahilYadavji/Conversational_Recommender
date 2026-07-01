@@ -45,6 +45,13 @@ METADATA_PATH = EMBEDDINGS_DIR / "metadata.pkl"
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 
+print("=" * 50)
+print("DEBUG")
+print("GEMINI_API_KEY exists:", "GEMINI_API_KEY" in os.environ)
+print("GEMINI_API_KEY value:", os.getenv("GEMINI_API_KEY"))
+print("Length:", len(os.getenv("GEMINI_API_KEY", "")))
+print("=" * 50)
+
 if not GEMINI_API_KEY:
     raise EnvironmentError(
         "GEMINI_API_KEY is missing.\n"
